@@ -12,6 +12,12 @@ app.use(cors());
 //Porta
 app.listen(process.env.PORT || 3000);
 
+// Introdução
+app.get('/',
+    (req,res) => {
+        res.send("Atividade 7 - Backend - Marcos Roberto")
+    }
+);
 myBooks = [ 
     {title: "Cristianismo Puro e Simples", author: "Clive Staples Lewis", originalYearOfPublication: 1952},
     {title: "Não Tenho Fé Suficiente Para Ser Ateu", author: "Norman L. Geisler and Frank Turek", originalYearOfPublication: 2004},
