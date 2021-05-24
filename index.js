@@ -18,31 +18,31 @@ myBooks = [
     {title: "Ciência e religião: Fundamentos para o diálogo", author: "Alister McGrath", originalYearOfPublication: 1999},
     {title: "A evolução e a queda: Implicações da ciência moderna para a teologia cristã", author:"James K. A. Smith and William T. Cavanaugh", originalYearOfPublication: 2017}
 ];
-//Enviando o Array de Objects myBooks Completo
+//Usando Get para obter o Array de Objects myBooks Completo
 app.get('/books',
     (req,res) => {
         res.send(myBooks);
     }    
 );
-//Enviando o Título do livro localizado no myBooks[0]
+//Usando Get para obter o Título do livro localizado no myBooks[0]
 app.get('/books/title', 
     (req, res) => {
         res.send({Title: myBooks[0].title});
     }
 );
-//Enviando o Autor do livro localizado no myBooks[0]
+//Usando Get para obter o Autor do livro localizado no myBooks[0]
 app.get('/books/author',
     (req,res) => {
         res.send({Author: myBooks[0].author});
     }
 );
-//Enviando o ano de publicação do livro localizado no myBooks[0]
+//Usando Get para obter o ano de publicação do livro localizado no myBooks[0]
 app.get('/books/originalyearofpublication',
     (req,res) => {
         res.send({originalYear: myBooks[0].originalYearOfPublication});
     }
 );
-//Enviando as informações contidas no myBooks[id] com título, autor e publicação do livro
+//Usando Get para obter as informações contidas no myBooks[id] com título, autor e publicação do livro
 app.get('/books/:id',
     (req,res) => {
         const id = req.params.id - 1;
