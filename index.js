@@ -86,7 +86,7 @@ app.delete('/books/:id',
     (req,res) => {
         const id = req.params.id - 1;
         delete myBooks[id];
-        res.send("Livro excluído com sucesso.");
+        res.send("Livro deletado com sucesso.");
     }
 );
 //Deletando um título específico com Delete
@@ -94,6 +94,6 @@ app.delete('/books/:id',
     (req,res) => {
         const id = req.params.id - 1;
         delete myBooks[id].title;
-        res.send("Título excluído com sucesso");
+        res.send("Título deletado com sucesso");
     }
 );
