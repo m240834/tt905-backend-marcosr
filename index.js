@@ -27,7 +27,7 @@ myBooks = [
 //Usando Get para obter o Array de Objects myBooks Completo
 app.get('/books',
     (req,res) => {
-        res.send(myBooks);
+        res.send({myBooks});
     }    
 );
 //Usando Get para obter o Título do livro localizado no myBooks[0]
