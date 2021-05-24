@@ -96,7 +96,7 @@ app.delete('/books/:id',
     }
 );
 //Deletando um título específico com Delete
-app.delete('/books/:id',
+app.delete('/books/title/:id',
     (req,res) => {
         const id = req.params.id - 1;
         delete myBooks[id].title;
