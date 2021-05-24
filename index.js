@@ -30,24 +30,6 @@ app.get('/books',
         res.send(myBooks);
     }    
 );
-//Usando Get para obter o Título do livro localizado no myBooks[0]
-app.get('/books/title', 
-    (req, res) => {
-        res.send({Title: myBooks[0].title});
-    }
-);
-//Usando Get para obter o Autor do livro localizado no myBooks[0]
-app.get('/books/author',
-    (req,res) => {
-        res.send({Author: myBooks[0].author});
-    }
-);
-//Usando Get para obter o ano de publicação do livro localizado no myBooks[0]
-app.get('/books/originalyearofpublication',
-    (req,res) => {
-        res.send({originalYear: myBooks[0].originalYearOfPublication});
-    }
-);
 //Usando Get para obter as informações contidas no myBooks[id] com título, autor e publicação do livro
 app.get('/books/:id',
     (req,res) => {
