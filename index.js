@@ -20,11 +20,11 @@ app.get('/',
 );
 myBooks = [ 
     {title: "Cristianismo Puro e Simples", author: "Clive Staples Lewis", originalYearOfPublication: 1952},
-    {},
+    {space: "................................................................................"},
     {title: "Não Tenho Fé Suficiente Para Ser Ateu", author: "Norman L. Geisler and Frank Turek", originalYearOfPublication: 2004},
-    {},
+    {space: "................................................................................"},
     {title: "Ciência e religião: Fundamentos para o diálogo", author: "Alister McGrath", originalYearOfPublication: 1999},
-    {},
+    {space: "................................................................................"},
     {title: "A evolução e a queda: Implicações da ciência moderna para a teologia cristã", author:"James K. A. Smith and William T. Cavanaugh", originalYearOfPublication: 2017}
 ];
 //Usando Get para obter o Array de Objects myBooks Completo
