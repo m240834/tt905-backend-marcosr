@@ -27,7 +27,7 @@ myBooks = [
 //Usando Get para obter o Array de Objects myBooks Completo
 app.get('/books',
     (req,res) => {
-        const object = JSON.stringify(myBooks, null, 10);
+        const object = JSON.stringify(myBooks,['title', 'author', 'originalYearOfPublication'], 4);
         res.send(object);
     }    
 );
