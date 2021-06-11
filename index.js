@@ -25,6 +25,7 @@ var myBooks = [
     {title: "Ciência e religião: Fundamentos para o diálogo", author: "Alister McGrath", originalYearOfPublication: 1999},
     {title: "A evolução e a queda: Implicações da ciência moderna para a teologia cristã", author:"James K. A. Smith and William T. Cavanaugh", originalYearOfPublication: 2017}
 ];
+console.log(myBooks);
 let object = JSON.stringify(myBooks, null, 20);
 //Usando Get para obter o Array de Objects myBooks Completo
 app.get('/books',
