@@ -19,19 +19,17 @@ app.get('/',
     }
 );
 
-var myBooks = [ 
+let myBooks = [ 
     {title: "Cristianismo Puro e Simples", author: "Clive Staples Lewis", originalYearOfPublication: 1952},
     {title: "Não Tenho Fé Suficiente Para Ser Ateu", author: "Norman L. Geisler and Frank Turek", originalYearOfPublication: 2004},
     {title: "Ciência e religião: Fundamentos para o diálogo", author: "Alister McGrath", originalYearOfPublication: 1999},
     {title: "A evolução e a queda: Implicações da ciência moderna para a teologia cristã", author:"James K. A. Smith and William T. Cavanaugh", originalYearOfPublication: 2017}
 ];
 
-let object = JSON.stringify(myBooks, null, 20);
 //Usando Get para obter o Array de Objects myBooks Completo
 app.get('/books',
     (req,res) => {
-        res.send(object);
-        console.log(myBooks);
+        res.send(myBooks);
     }    
 );
 //Usando Get para obter as informações contidas no myBooks[id] com título, autor e publicação do livro
