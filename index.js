@@ -90,7 +90,7 @@ app.delete('/books/title/:id',
 
 // Utilizando MongoDB
 
-const mongodb = require('mongodb');
+const mongodb = require('mongodb')
 const password = process.env.PASSWORD|| "Senha não enviada";
 console.log(password);
 
@@ -102,7 +102,7 @@ const options = {
 };
 
 (async()=>{
-    const client = await mongodb.MongoClient.connect(connectString, options);
+    const client = await mongodb.MongoClient.connect(connectionString, options);
     const db = client.db('myFirstDateBase');
     const myBooks = db.collection('myBooks');
     console.log(await myBooks.find({}).toArray());
