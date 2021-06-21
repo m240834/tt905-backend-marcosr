@@ -109,9 +109,9 @@ const options = {
     console.log("Entrou na async inicial");
 
     app.get('/database',
-    async function(req, res){
-    res.send(await livros.find({}).toArray());
-    }
+        async function(req, res){
+            res.send(await livros.find({}).toArray());
+        }
 );
 
 app.get('/database/:id',
