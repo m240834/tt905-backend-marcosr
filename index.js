@@ -103,7 +103,7 @@ const options = {
 
 (async()=>{
     const client = await mongodb.MongoClient.connect(connectionString, options);
-    const db = client.db('myFirstDatebase');
+    const db = client.db('myFirstDateBase');
     const myBooks = db.collection('myBooks');
     console.log(await myBooks.find({}).toArray());
 
