@@ -106,7 +106,6 @@ const options = {
     const db = client.db('myFirstDatabase');
     const livros = db.collection('livros');
     console.log(await livros.find({}).toArray());
-    console.log("Entrou na async inicial");
 
     app.get('/database',
         async function(req, res){
