@@ -104,27 +104,27 @@ const options = {
 (async()=>{
     const client = await mongodb.MongoClient.connect(connectionString, options);
     const db = client.db('myFirstDatebase');
-    const myBooks = db.collection('myBooks');
-    console.log(await myBooks.find({}).toArray());
-
+    const livros = db.collection('livros');
+    console.log(await livros.find({}).toArray());
+    console.log("Entrou na async inicial");
 
     app.get('/database',
     async function(req, res){
-    res.send(await myBooks.find({}).toArray());
+    res.send(await livros.find({}).toArray());
     }
 );
 
 app.get('/database/:id',
     async function(req, res){
         const id = req.params.id;
-        const myBook = await myBooks.findOne(
+        const livro = await livros.findOne(
             {_id: mongodb.ObjectID(id)}
         );
-        console.log(myBook);
-        if(!myBook){
+        console.log(livro);
+        if(!livro){
             res.send("myBooks não encontrado");
         } else {
-            res.send(myBook);
+            res.send(livro);
         }
     }
 );
@@ -132,9 +132,9 @@ app.get('/database/:id',
 app.post('/database',
     async (req, res) => {
         console.log(req.body);
-        const myBook = req.body;
-        delete myBook["_id"];
-        myBooks.insertOne(myBook);
+        const livro = req.body;
+        delete livro["_id"];
+        livros.insertOne(livro);
         res.send("Livro criado");
     }
 );
@@ -142,20 +142,20 @@ app.post('/database',
 app.put('/database/:id',
     async (req, res) =>{
         const id = req.params.id;
-        const myBook = req.body;
-        console.log(myBook);
-        delete myBook["_id"];
+        const livro = req.body;
+        console.log(livro);
+        delete livro["_id"];
 
-        const num_myBooks = await myBooks.countDocuments({_id : mongodb.ObjectID(id)});
+        const num_livros = await livros.countDocuments({_id : mongodb.ObjectID(id)});
             
-        if (num_myBooks !== 1) {
+        if (num_livros !== 1) {
             res.send("Ocorreu um erro por conta do número de livros");
             return;
         }
 
-        await myBooks.updateOne(
+        await livros.updateOne(
             {_id : mongodb.ObjectID(id)},
-            {$set : myBook}
+            {$set : livro}
         );
 
             res.send("Livro atualizado com sucesso.")
@@ -166,7 +166,7 @@ app.delete('/database/:id',
     async (req, res) => {
         const id = req.params.id;
 
-        await myBooks.deleteOne({_id : mongodb.ObjectID(id)});
+        await livros.deleteOne({_id : mongodb.ObjectID(id)});
 
         res.send("Livro removido com sucesso");
     }
