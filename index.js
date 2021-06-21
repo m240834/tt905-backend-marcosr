@@ -103,7 +103,7 @@ const options = {
 
 (async()=>{
     const client = await mongodb.MongoClient.connect(connectionString, options);
-    const db = client.db('myFirstDatebase');
+    const db = client.db('myFirstDatabase');
     const livros = db.collection('livros');
     console.log(await livros.find({}).toArray());
     console.log("Entrou na async inicial");
